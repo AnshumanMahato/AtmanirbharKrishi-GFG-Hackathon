@@ -9,6 +9,24 @@
     <title>Aatmanirbhar Krishi</title>
   </head>
   <body>
+
+    <div class="container_top" id="modal-opened">
+      <div class="modal">
+        <a style="scale: 0.65;" href="#modal-closed" class="link-2"></a>
+        <div id="quantity">
+          <div>
+            <span>Enter Quantity in Kg : </span><input id="quan" onchange=net_price() type="number" value="1" min="1">
+          </div>
+        <div>
+          <span>price per Kg :  </span><span id="amount"></span>
+          <span> /-</span>
+        </div>
+        <span>Net Amount :  </span><span id="net_a"></span>
+        </div>
+        <button style="scale: 0.65;" class="btn">Checkout &rarr;</button>
+      </div>
+    </div>
+
     <nav class="navbar">
       <div class="navbar-container">
         <input type="checkbox" name="" id="checkbox" />
@@ -30,6 +48,7 @@
         </div>
       </div>
     </nav>
+
     <section id="home">
       <div class="home_page">
         <div class="home_img">
@@ -63,26 +82,28 @@
           <img src="assets/rice/rice.jpg" alt="img" />
           <div class="img-content">
             <p>Rabi Crops</p>
-            <button><a href="#sellers">SHOP NOW</a></button>
+            <button><a href="#gaps1">SHOP NOW</a></button>
           </div>
         </div>
         <div class="content2">
           <img src="assets/wheat/Wheat.jpg" alt="img" />
           <div class="img-content2">
             <p>Kharif Crops</p>
-            <button><a href="#sellers">SHOP NOW</a></button>
+            <button><a href="#gaps1">SHOP NOW</a></button>
           </div>
         </div>
         <div class="content3">
           <img src="assets/cereals/cereals.jpg" alt="img" />
           <div class="img-content3">
             <p>Cereals</p>
-            <button><a href="#sellers">SHOP NOW</a></button>
+            <button><a href="#gaps1">SHOP NOW</a></button>
           </div>
         </div>
       </div>
     </section>
+
     <div id="gaps1"></div>
+
     <section id="sellers">
       <div class="seller container">
         <h2>Rabi Crop Sales</h2>
@@ -110,14 +131,11 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(37.24)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
               </div>
-              <!-- <div class="add-cart">
-                            <button>Add To Cart</button>
-                        </div> -->
             </div>
           </div>
           <div class="best-p1">
@@ -146,7 +164,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(17.24)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -176,7 +194,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(27.24)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -206,7 +224,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(43.67)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -241,7 +259,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(10.23)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -271,7 +289,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(09.28)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -304,7 +322,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(6.24)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -334,7 +352,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(43.67)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -369,7 +387,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(37.24)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -399,7 +417,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(10.23)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -429,7 +447,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(15.24)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -459,7 +477,7 @@
               </div>
               <div class="buy-now">
                 <button>
-                  <a href="https://codepen.io/sanketbodke/full/mdprZOq"
+                  <a  onclick=price(09.28)  href="#modal-opened"
                     >Buy Now</a
                   >
                 </button>
@@ -469,7 +487,9 @@
         </div>
       </div>
     </section>
+
     <div id="gaps2"></div>
+
     <section id="contact">
       <div class="contact container">
         <form action="https://formspree.io/f/xzbowpjq" method="POST">
@@ -515,6 +535,7 @@
         </form>
       </div>
     </section>
+
     <footer>
       <div class="footer-container container">
         <div class="content_1">
@@ -536,15 +557,12 @@
         </div>
         <div class="content_3">
           <h4>ABOUT</h4>
-          <a href="./contact.html">Contact Us</a>
-          <a href="https://payment-method-sb.netlify.app/" target="_blank"
-            >Payment Method</a
+          <a href="#">Contact Us</a>
+          <a href="#">Payment Method</a
           >
-          <a href="https://delivery-status-sb.netlify.app/" target="_blank"
-            >Delivery</a
+          <a href="#">Delivery</a
           >
-          <a href="https://codepen.io/sandeshbodake/full/Jexxrv" target="_blank"
-            >Return and Exchange</a
+          <a href="#">Return and Exchange</a
           >
         </div>
         <!-- <div class="content_4">
@@ -566,6 +584,8 @@
         </div>
       </div>
     </footer>
+
+    
     <script src="app.js"></script>
   </body>
 </html>
