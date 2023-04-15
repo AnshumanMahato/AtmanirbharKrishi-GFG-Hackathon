@@ -1,7 +1,7 @@
 {
   "name": "atmanirbhar-krishi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Project for gfg hackathon",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
@@ -53,5 +53,18 @@
   },
   "engines": {
     "node": ">=12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnshumanMahato/AtmanirbharKrishi-GFG-Hackathon.git"
+  },
+  "keywords": [
+    "gfg",
+    "hackathon",
+    "farming"
+  ],
+  "bugs": {
+    "url": "https://github.com/AnshumanMahato/AtmanirbharKrishi-GFG-Hackathon/issues"
+  },
+  "homepage": "https://github.com/AnshumanMahato/AtmanirbharKrishi-GFG-Hackathon#readme"
 }
