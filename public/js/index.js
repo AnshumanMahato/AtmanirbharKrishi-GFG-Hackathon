@@ -9,7 +9,7 @@ import { hideAlert, showAlert, showPrompt } from './alerts';
 const signupForm = document.querySelector('.form--signup');
 const loginForm = document.querySelector('.form--login');
 const logOutBtn = document.querySelector('.nav__el--logout');
-const orderBtn = document.getElementById('order-product');
+const orderBtns = document.querySelectorAll('.order-product');
 
 // DELEGATION
 
@@ -37,19 +37,14 @@ if (loginForm) {
 
 if (logOutBtn) logOutBtn.addEventListener('click', logout);
 
-if (orderBtn)
-  orderBtn.addEventListener('click', e => {
-    e.target.textContent = 'Processing...';
-    const { productId } = e.target.dataset;
-    orderProduct(productId);
-  });
+if (orderBtns)
+  orderBtns.forEach(orderBtn =>
+    orderBtn.addEventListener('click', e => {
+      e.target.textContent = 'Processing...';
+      const { productId } = e.target.dataset;
+      orderProduct(productId);
+    })
+  );
 
 const alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) showAlert('success', alertMessage, 20);
-
-if (orderBtn)
-  orderBtn.addEventListener('click', e => {
-    e.target.textContent = 'Processing...';
-    const { productId } = e.target.dataset;
-    orderProduct(productId);
-  });

@@ -56,11 +56,8 @@ const connectSrcUrls = [
   'https://*.mapbox.com/',
   'https://*.cloudflare.com',
   'http://127.0.0.1:3000',
-  'ws://127.0.0.1:60700/',
-  'ws://127.0.0.1:56233/',
-  'ws://127.0.0.1:50696/',
-  'ws://localhost:38107/',
-  'ws://127.0.0.1:53937/'
+  'ws://localhost:*/',
+  'ws://127.0.0.1:*/'
 ];
 
 const frameSrcUrls = ['https://js.stripe.com/'];

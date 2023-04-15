@@ -7,13 +7,7 @@ const router = express.Router();
 
 router.use(viewsController.alerts);
 
-router.get('/', authController.isLoggedIn, (req, res) => {
-  const url = `${req.protocol}://${req.get('host')}/`;
-  res.render('index', {
-    url,
-    products
-  });
-});
+router.get('/', authController.isLoggedIn, viewsController.index);
 router.get('/signup', authController.isLoggedIn, viewsController.getSingupForm);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 

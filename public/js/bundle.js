@@ -11322,7 +11322,7 @@ exports.logout = logout;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.bookTour = void 0;
+exports.orderProduct = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -11338,10 +11338,10 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var stripe = Stripe('pk_test_51LIrksSBHqB5cIdTNduHYindN9SelcGvXfWKcPS7ynK4eXwB2dsZRjet38XFUfC2yL2NR4SqRALZ4yT14DigtOjQ00rbeHqN8o');
+var stripe = Stripe('pk_test_51MwelcSHRaMUMUayAPn386PipkteiTpz21MA4xr3fBYlDcxEFYWCgmkvLxE0Yh6pYDTNy83DVIBZcKZCmy40pgfm00ErHtSzWD');
 
-var bookTour = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(tourId) {
+var orderProduct = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(productId) {
     var session;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
@@ -11349,7 +11349,7 @@ var bookTour = /*#__PURE__*/function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return (0, _axios.default)("/api/v1/bookings/checkout-session/".concat(tourId));
+            return (0, _axios.default)("/api/v1/orders/checkout-session/".concat(productId));
 
           case 3:
             session = _context.sent;
@@ -11376,12 +11376,12 @@ var bookTour = /*#__PURE__*/function () {
     }, _callee, null, [[0, 8]]);
   }));
 
-  return function bookTour(_x) {
+  return function orderProduct(_x) {
     return _ref.apply(this, arguments);
   };
 }();
 
-exports.bookTour = bookTour;
+exports.orderProduct = orderProduct;
 },{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -11661,7 +11661,7 @@ var _alerts = require("./alerts");
 var signupForm = document.querySelector('.form--signup');
 var loginForm = document.querySelector('.form--login');
 var logOutBtn = document.querySelector('.nav__el--logout');
-var bookBtn = document.getElementById('book-tour'); // DELEGATION
+var orderBtns = document.querySelectorAll('.order-product'); // DELEGATION
 
 if (signupForm) {
   signupForm.addEventListener('submit', function (e) {
@@ -11684,10 +11684,12 @@ if (loginForm) {
 }
 
 if (logOutBtn) logOutBtn.addEventListener('click', _login.logout);
-if (bookBtn) bookBtn.addEventListener('click', function (e) {
-  e.target.textContent = 'Processing...';
-  var tourId = e.target.dataset.tourId;
-  (0, _stripe.bookTour)(tourId);
+if (orderBtns) orderBtns.forEach(function (orderBtn) {
+  return orderBtn.addEventListener('click', function (e) {
+    e.target.textContent = 'Processing...';
+    var productId = e.target.dataset.productId;
+    (0, _stripe.orderProduct)(productId);
+  });
 });
 var alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) (0, _alerts.showAlert)('success', alertMessage, 20);
@@ -11719,7 +11721,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "38107" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "1774" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

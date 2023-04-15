@@ -1,4 +1,5 @@
 const User = require('../models/userModel');
+const Product = require('../models/productModel');
 // const userController = require('./userController');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
@@ -9,6 +10,15 @@ exports.alerts = (req, res, next) => {
     res.locals.alert =
       "Your order was successful! Please check your email for a confirmation. If your order doesn't show up here immediatly, please come back later.";
   next();
+};
+
+exports.index = async (req, res) => {
+  const url = `${req.protocol}://${req.get('host')}/`;
+  const products = await Product.find();
+  res.render('index', {
+    url,
+    products
+  });
 };
 
 exports.getSingupForm = (req, res) => {

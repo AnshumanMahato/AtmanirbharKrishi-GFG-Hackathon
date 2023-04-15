@@ -9,28 +9,29 @@ const factory = require('./handlerFactory');
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently ordered product
   const product = await Product.findById(req.params.productId);
+  console.log(req.user);
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
-    // success_url: `${req.protocol}://${req.get('host')}/my-products/?product=${
-    //   req.params.productId
-    // }&user=${req.user.id}&price=${product.price}`,
-    success_url: `${req.protocol}://${req.get('host')}/my-products?alert=order`,
-    cancel_url: `${req.protocol}://${req.get('host')}/product/${product.slug}`,
+    mode: 'payment',
+    success_url: `${req.protocol}://${req.get('host')}/?alert=order`,
+    cancel_url: `${req.protocol}://${req.get('host')}/`,
     customer_email: req.user.email,
     client_reference_id: req.params.productId,
     line_items: [
       {
-        name: `${product.name} Product`,
-        description: product.summary,
-        images: [
-          `${req.protocol}://${req.get('host')}/img/products/${
-            product.imageCover
-          }`
-        ],
-        amount: product.price * 100,
-        currency: 'usd',
-        quantity: 1
+        price_data: {
+          currency: 'inr',
+          unit_amount: product.pricePerKg * 100,
+          product_data: {
+            name: `${product.name} Product`,
+            description: product.name
+          }
+        },
+        quantity: 1,
+        adjustable_quantity: {
+          enabled: true
+        }
       }
     ]
   });

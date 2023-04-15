@@ -5,8 +5,7 @@ block content
       .container
         each product in products
           .product
-            img.product-img(src='https://source.unsplash.com/random/300x200?rice', alt='Product Image')
-            h3.product-name= product.farmerName
-            p.product-price= `${product.price} / ${product.unit}`
-            p.product-miller= `Miller: ${product.millerName}`
-            button.product-buy Buy
+            img.product-img(src=`${product.imageCover}`, alt=`${product.name}`)
+            h3.product-name= product.name
+            p.product-price= `${product.pricePerKg} / kg`
+            button.product-buy.order-product(data-product-id= `${product.id}`) Buy
