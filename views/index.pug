@@ -1,0 +1,12 @@
+extend base
+
+block content
+    section.catalog
+      .container
+        each product in products
+          .product
+            img.product-img(src='https://source.unsplash.com/random/300x200?rice', alt='Product Image')
+            h3.product-name= product.farmerName
+            p.product-price= `${product.price} / ${product.unit}`
+            p.product-miller= `Miller: ${product.millerName}`
+            button.product-buy Buy

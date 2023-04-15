@@ -1,0 +1,123 @@
+doctype transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='x-apple-disable-message-reformatting')
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='color-scheme', content='light dark')
+    meta(name='supported-color-schemes', content='light dark')
+    title= subject
+    include _recieptStyle
+  body
+    span.preheader
+      | 
+      =`This is a receipt for your recent purchase on ${order.createdAt.toLocaleString('en-us', {day:'numeric' ,month: 'long', year: 'numeric'})}. No payment is due with this receipt.`
+    table.email-wrapper(width='100%', cellpadding='0', cellspacing='0', role='presentation')
+      tbody
+        tr
+          td(align='center')
+            table.email-content(width='100%', cellpadding='0', cellspacing='0', role='presentation')
+              tbody
+                tr
+                  td.email-masthead
+                    a.f-fallback.email-masthead_name(href=`${url}`)
+                      img(src=`${url}/img/logo-green.png`)
+                    //-   | 
+                    //-   = `${order.product.name} product`
+                // Email Body
+                tr
+                  td.email-body(width='570', cellpadding='0', cellspacing='0')
+                    table.email-body_inner(align='center', width='570', cellpadding='0', cellspacing='0', role='presentation')
+                      // Body content
+                      tbody
+                        tr
+                          td.content-cell
+                            .f-fallback
+                              h1= `Hi ${firstName},` 
+                              p
+                                | 
+                                =`Thanks for puchasing ${order.product.name} product. This email is the receipt for your purchase. No payment is due.`
+                              
+                              table.purchase(width='100%', cellpadding='0', cellspacing='0', role='presentation')
+                                tbody
+                                  tr
+                                    td
+                                      h3= `Reciept #${parseInt(Date.now()/1000)}`
+                                    td
+                                      h3.align-right= order.createdAt.toLocaleString('en-us', {day:'numeric' ,month: 'long', year: 'numeric'})
+                                  tr
+                                    td(colspan='2')
+                                      | Customer Name:
+                                      | #{order.user.name}
+                                  tr
+                                    td(colspan='2')
+                                      | Customer Email:
+                                      | #{order.user.email}
+                                  tr
+                                    td(colspan='2')
+                                      | Transaction ID:
+                                      | #{order._id}
+                                      table.purchase_content(width='100%', cellpadding='0', cellspacing='0')
+                                        tbody
+                                          tr
+                                            th.purchase_heading(align='left')
+                                              p.f-fallback Description
+                                            th.purchase_heading(align='right')
+                                              p.f-fallback Amount
+                                          tr
+                                            td.purchase_item(width='80%')
+                                              span.f-fallback= `${order.product.name} product`
+                                            td.align-right(width='20%')
+                                              span.f-fallback= `$${order.price}`
+                                          tr
+                                            td.purchase_footer(width='80%', valign='middle')
+                                              p.f-fallback.purchase_total.purchase_total--label Total
+                                            td.purchase_footer(width='20%', valign='middle')
+                                              p.f-fallback.purchase_total= `$${order.price}`
+                              p
+                                | If you have any questions about this receipt or want to cancel your order, simply reply to this email for help.
+                              p
+                                | We hope that you enjoy this trip and make some soem great memories. Have a safe journey.
+                              p
+                                | Cheers,
+                                br
+                                | The Atmanirbhar Krishi team
+                              // Action
+                            //-   table.body-action(align='center', width='100%', cellpadding='0', cellspacing='0', role='presentation')
+                            //-     tbody
+                            //-       tr
+                            //-         td(align='center')
+                            //-           //
+                            //-             Border based button
+                            //-             https://litmus.com/blog/a-guide-to-bulletproof-buttons-in-email-design
+                            //-           table(width='100%', border='0', cellspacing='0', cellpadding='0', role='presentation')
+                            //-             tbody
+                            //-               tr
+                            //-                 td(align='center')
+                            //-                   a.f-fallback.button.button--blue(href='{{action_url}}', target='_blank') Download as PDF
+                            //-   // Sub copy
+                            //-   table.body-sub(role='presentation')
+                            //-     tbody
+                            //-       tr
+                            //-         td
+                            //-           p.f-fallback.sub
+                            //-             strong Need a printable copy for your records?
+                            //-             |  You can 
+                            //-             a(href='{{action_url}}') download a PDF version
+                            //-             | .
+                            //-           p.f-fallback.sub
+                            //-             | Moved recently? Have a new credit card? You can easily 
+                            //-             a(href='{{billing_url}}') update your billing information
+                            //-             | .
+                tr
+                  td
+                    table.email-footer(align='center', width='570', cellpadding='0', cellspacing='0', role='presentation')
+                      tbody
+                        tr
+                          td.content-cell(align='center')
+                            p.f-fallback.sub.align-center
+                              | Atmanirbhar Krishi
+                              br
+                              | 1234 Street Rd.
+                              br
+                              | Suite 1234

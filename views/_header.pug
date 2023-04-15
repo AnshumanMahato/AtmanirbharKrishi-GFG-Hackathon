@@ -1,0 +1,17 @@
+header
+  .container
+    .logo
+      img.logo(src='./img/logo.svg', alt='Logo')
+      | Atmanirbhar Krishi
+    nav
+      ul
+        if user
+          li
+            span.username= user.name
+          li
+            a.nav__el--logout Logout
+        else
+          li
+            a(href='/login') Login
+          li
+            a(href='/signup') Signup
