@@ -1,0 +1,22 @@
+mixin productCard(product)
+    = console.log(product)
+    .best-p1
+      img(src=`${product.imageCover}` alt='img')
+      .best-p1-txt
+        .name-of-p
+          p= product.name
+        .rating
+          i.bx.bxs-star
+          i.bx.bxs-star
+          i.bx.bxs-star
+          i.bx.bx-star
+          i.bx.bx-star
+        .price= `₹ ${product.price}`
+          .colors
+            i.bx.bxs-circle.red
+            i.bx.bxs-circle.blue
+            i.bx.bxs-circle.white
+        .buy-now
+          button
+            a.order-product Buy Now
+

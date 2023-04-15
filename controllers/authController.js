@@ -21,6 +21,7 @@ const createSendToken = (user, statusCode, req, res) => {
     httpOnly: true,
     secure: req.secure || req.headers['x-forwarded-proto'] === 'https'
   };
+  console.log(process.env.JWT_COOKIE_EXPIRES_IN);
 
   res.cookie('jwt', token, cookieOptions);
 

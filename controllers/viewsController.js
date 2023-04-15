@@ -17,7 +17,9 @@ exports.index = async (req, res) => {
   const products = await Product.find();
   res.render('index', {
     url,
-    products
+    rabi: products.filter(product => product.type === 'rabi'),
+    kharif: products.filter(product => product.type === 'kharif'),
+    cereal: products.filter(product => product.type === 'cereal')
   });
 };
 

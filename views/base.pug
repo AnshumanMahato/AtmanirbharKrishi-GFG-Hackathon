@@ -4,11 +4,12 @@ html
     block head
       //- <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
       meta(charset='UTF-8')
+      meta(http-equiv='X-UA-Compatible' content='IE=edge')
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
-      link(rel='shortcut icon' type='image/png' href='/img/favicon.png')
+      link(rel='shortcut icon' type='image/x-icon' href='/img/logo.svg')
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
       link(rel='stylesheet' href='/style.css')
-      title Atmanirbhar Krishi | #{title}
+      title Atmanirbhar Krishi
   
   body(data-alert=`${alert ? alert : ''}`)
     // HEADER

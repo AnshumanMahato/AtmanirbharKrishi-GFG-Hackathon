@@ -1,11 +1,73 @@
 extend base
+include _productCard
 
 block content
-    section.catalog
-      .container
-        each product in products
-          .product
-            img.product-img(src=`${product.imageCover}`, alt=`${product.name}`)
-            h3.product-name= product.name
-            p.product-price= `${product.pricePerKg} / kg`
-            button.product-buy.order-product(data-product-id= `${product.id}`) Buy
+  section#home
+    .home_page
+      .home_img
+        img(src='img/HeroImage.webp' alt='img ')
+      .home_txt
+        p.collectio FRESH FARM PRODUCE
+        h2
+          | RABI - KHARIF
+          br
+          | Kheti Collection &apos;23
+        .home_label
+          p
+            | Fresh from the farm to your door, the taste of nature like never before. 
+            br
+            | Feel the love of the farmers with each feed.
+        button
+          a(href='#gaps1') SHOP NOW
+          i.bx.bx-right-arrow-alt
+        .home_social_icons
+          a(href='#')
+            i.bx.bxl-facebook
+          a(href='#')
+            i.bx.bxl-twitter
+          a(href='#')
+            i.bx.bxl-pinterest
+          a(href='#')
+            i.bx.bxl-instagram
+  
+  section#collection
+    .collections.container
+      .content
+        img(src='img/rabi/rice.jpg' alt='img')
+        .img-content
+          p Rabi Crops
+          button
+            a(href='#sellers') SHOP NOW
+      .content2
+        img(src='img/kharif/Wheat.jpg' alt='img')
+        .img-content2
+          p Kharif Crops
+          button
+            a(href='#sellers') SHOP NOW
+      .content3
+        img(src='img/cereals/cereals.jpg' alt='img')
+        .img-content3
+          p Cereals
+          button
+            a(href='#sellers') SHOP NOW
+  
+  #gaps1
+  section#sellers
+    .seller.container
+      h2 Rabi Crop Sales
+      .best-seller
+        each product in rabi
+          +productCard(product)
+    .seller.container
+      h2 Kharif Crop Sales
+      .best-seller
+        each product in kharif
+          +productCard(product)
+    .seller.container
+      h2 Cereals Sales
+      .best-seller
+        each product in cereal
+          +productCard(product)
+
+
+

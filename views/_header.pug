@@ -1,17 +1,26 @@
-header
-  .container
+nav.navbar
+  .navbar-container
+    input#checkbox(type='checkbox' name='')
+    .hamburger-lines
+      span.line.line1
+      span.line.line2
+      span.line.line3
+    ul.menu-items
+      li
+        a(href='/#home') Home
+      li
+        a(href='/#gaps1') Shop
+      li
+        a(href='/#gaps2') Contact
+      if user
+        li
+          span.username= user.name
+        li
+          a.nav__el--logout Logout
+      else
+        li
+          a(href='/login') Login
+        li
+          a(href='/signup') Signup
     .logo
-      img.logo(src='./img/logo.svg', alt='Logo')
-      | Atmanirbhar Krishi
-    nav
-      ul
-        if user
-          li
-            span.username= user.name
-          li
-            a.nav__el--logout Logout
-        else
-          li
-            a(href='/login') Login
-          li
-            a(href='/signup') Signup
+      a#logo_name(href='') Aatmanirbhar Krishi.
