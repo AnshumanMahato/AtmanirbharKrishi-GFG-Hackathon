@@ -83,7 +83,8 @@ app.use(
         'blob:',
         'data:',
         'https://source.unsplash.com/random/300x200',
-        'https://images.unsplash.com/*'
+        'https://images.unsplash.com/*',
+        'https://i.postimg.cc/Nj9dgJ98/cards.png'
       ],
       fontSrc: ["'self'", ...fontSrcUrls],
       frameSrc: ["'self'", ...frameSrcUrls]
@@ -125,10 +126,7 @@ app.use(xss());
 // Prevent parameter pollution
 app.use(
   hpp({
-    whitelist: [
-      'pricePerKg',
-      'type'
-    ]
+    whitelist: ['pricePerKg', 'type']
   })
 );
 

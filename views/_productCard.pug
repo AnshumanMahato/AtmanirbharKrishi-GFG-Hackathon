@@ -11,12 +11,12 @@ mixin productCard(product)
           i.bx.bxs-star
           i.bx.bx-star
           i.bx.bx-star
-        .price= `₹ ${product.price}`
+        .price= `₹ ${product.pricePerKg}/kg`
           .colors
             i.bx.bxs-circle.red
             i.bx.bxs-circle.blue
             i.bx.bxs-circle.white
         .buy-now
           button
-            a.order-product Buy Now
+            a.order-product(data-product-id= `${product.id}`) Buy Now
 

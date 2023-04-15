@@ -69,5 +69,29 @@ block content
         each product in cereal
           +productCard(product)
 
+  #gaps2
+  section#contact
+    .contact.container
+      form(action='https://formspree.io/f/xzbowpjq' method='POST')
+        .form
+          .form-txt
+            h4 INFORMATION
+            h1 Contact Us
+            span
+              | Get in touch with us to learn more about our farm-fresh produce and support local farmers.
+            h3 INDIA
+            p
+              | Hostel K, NIT JAMSHEDHPUR
+              br
+              | Adityapur, 831034
+              br
+              | +91 8294206867
+          .form-details
+            input#name(type='text' name='name' placeholder='Name' required='')
+            input#email(type='email' name='email' placeholder='Email' required='')
+            textarea#message(name='message' cols='52' rows='7' placeholder='Message' required='')
+            button SEND MESSAGE
+
+
 
 
