@@ -34,7 +34,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             name: `${product.name} Product`,
             description: product.name,
             images: [
-              `${req.protocol}://${req.get('host')}/img/${product.type}/${
+              `https://${req.get('host')}/img/${product.type}/${
                 product.imageCover
               }`
             ]
