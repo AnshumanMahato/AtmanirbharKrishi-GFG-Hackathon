@@ -1,99 +1,27 @@
-# GFG-Hackathon
-Project for gfg hackathon
+# Atmanirbhar Krishi
+ 
+Project for GeeksForGeeks GoogleXAmd Hackathon.
 
-User Stories:-
+## What are the problems being addressed and how to solve them?
 
-Customer: Login -> look nearby rice farmers and price -> select one -> select pickup/delivery -> pay and chill
+As per the Situation Assessment Survey (SAS), Average monthly income per agricultural household in India is ₹10,218. 
+Solution: This project tries to give farmers more monthly income.
 
-Farmer: Associate with a miller( done during user registration)
-	  Add Rice info(quantity, price, photos)
+The only choice of farmers to sell their produce is through APMC. But they could get very good profits if sold directly to customers. But it has various problems associated with it
+- They don’t have the reach. 
+	- Solution: Our platform will provide them the reach they need.
+- They can’t ensure transportation and delivery.
+	- Solution: Our platform will build a network for easy transportation and delivery.
+- Customers need milled products.
+	- Solution: Our platform will connect the millers as well.
 
-Miller: specify milling charges(and storage?) specify transport charges.
-	(all probably added to end product price?)
-	manage delivery time.(How will delivery time be calculated?)
+- But isn't it going to be hard for the farmers? Are they literate enough to do it by themselves?
+	- Solution: We are going to make the process as much easier as possible. For farmers it would be to just update the price, amount of stock and sometimes images. For those who are illiterate, our agents will make sure their operations run smoothly. 
+	- Extra: Agents are the local students who are above 18.
 
+## Technology Used?
 
-Implementation:-
-
-1. Data Models
-	Customer
-		name
-		address:{area, pin, city, state}
-		password:
-		email
-		phone
-		cart:[Rice]
-	Miller
-		name
-		address:{area, pin, city, state}
-		password:
-		email
-		phone
-		minimum milling qty
-		mill charges
-		storage charges
-		delivery charges
-	Farmer
-		name
-		address:{area, pin, city, state}
-		password:
-		email
-		phone
-		associated miller
-	Order:
-		farmer
-		quantity
-		price
-		order status
-
-2. User flows
-	Farmer Dashboard ->
-		add rice button -> form to take rice quantity, price and other details -> send data to backend
-		Amount of rice in stock
-		Rice Sold
-		Earnings
-		change miller
-
-	Miller Dashboard
-		Delivery management
-		Mill management(which farmer gave how much rice)
-		Earnings
-		Total rice sale
-
-	Customer
-		Marketplace window showing available farmers in city/state.(components with farmer_details/rice_picture and price.
-		Selecting each option shows more details like milling charges and other stuff and an buy button
-		click buy button -> form for required quantity and pickup/delivery -> pay window -> (payment success) send update to farmer and miller
-		Order Tracking
-		
-		
-
-	User registration
-		-> Form to take details{name, address, email. password, phone} -> user entered detail -> send to backend ->  return status
-	Login
-		-> Form to take email and password -> take info -> send to backend -> verify and return status accordingly
-
-
-
-----------------------Under development------------------------		
-
-3. Rest api architecture
-	
-		user registration(post routes of each model)
-		user authentication and authorization -> JWT(JavaScript Web Token) based
-			login -> get creds ->  user verification -> (success) send JWT
-
-		General user routes
-			edit user (patch route for each model preceded by user verification)
-			change password. (patch route for each model preceded by user verification)
-			delete account. (delete route for each model preceded by user verification)
-			recover password.
-		
-		Farmer
-
-
-			
-
-		
-			
-
+- Frontend - HTML, CSS and Vanilla Javascript.
+- Backend - NodeJS, MongoDB
+- Deployment - Google Cloud with AMD Instances.
+- Payment Gateway - Stripe
