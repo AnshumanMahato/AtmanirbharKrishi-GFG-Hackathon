@@ -8,11 +8,11 @@ const factory = require('./handlerFactory');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently ordered product
+  const product = await Product.findById(req.params.productId);
   const test = `${req.protocol}://${req.get('host')}/img/${product.type}/${
     product.imageCover
   }`;
   console.log(test);
-  const product = await Product.findById(req.params.productId);
   const qty = Number(req.query?.qty);
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
