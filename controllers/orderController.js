@@ -47,7 +47,6 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 });
 
 const createOrderCheckout = async (req, session) => {
-  console.log(session);
   const product = await Product.findById(session.client_reference_id).select(
     'name'
   );
