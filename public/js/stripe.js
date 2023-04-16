@@ -4,10 +4,12 @@ import { showAlert } from './alerts';
 const stripe = Stripe(
   'pk_test_51MwelcSHRaMUMUayAPn386PipkteiTpz21MA4xr3fBYlDcxEFYWCgmkvLxE0Yh6pYDTNy83DVIBZcKZCmy40pgfm00ErHtSzWD'
 );
-export const orderProduct = async productId => {
+export const orderProduct = async (productId, quantity) => {
   try {
     // 1) Get checkout session from API
-    const session = await axios(`/api/v1/orders/checkout-session/${productId}`);
+    const session = await axios(
+      `/api/v1/orders/checkout-session/${productId}?qty=${quantity}`
+    );
     // console.log(session);
 
     // 2) Create checkout form + chanre credit card

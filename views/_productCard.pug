@@ -17,6 +17,5 @@ mixin productCard(product)
             i.bx.bxs-circle.blue
             i.bx.bxs-circle.white
         .buy-now
-          button
-            a.order-product(data-product-id= `${product.id}`) Buy Now
-
+          button.order-product(data-product-id= `${product.id}`, data-price= product.pricePerKg)
+            a Buy Now

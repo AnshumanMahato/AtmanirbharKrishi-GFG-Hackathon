@@ -9,7 +9,7 @@ const factory = require('./handlerFactory');
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently ordered product
   const product = await Product.findById(req.params.productId);
-  console.log(req.user);
+  const qty = Number(req.query?.qty);
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
@@ -31,7 +31,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             description: product.name
           }
         },
-        quantity: 1,
+        quantity: qty || 1,
         adjustable_quantity: {
           enabled: true
         }
