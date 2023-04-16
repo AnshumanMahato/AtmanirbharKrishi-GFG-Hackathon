@@ -23,7 +23,7 @@ body {
 :root {
   /* //....... Color ........// */
   --primary-color: #ff3c78;
-  --light-black: rgba(0, 0, 0, 0.89);
+  --light-black: #000000e3;
   --black: #000;
   --white: #fff;
   --grey: #aaa;
@@ -1390,6 +1390,14 @@ iframe {
   transition: all 2s;
 }
 
+@media only screen and (max-width: 768px) {
+  .singup-form,
+  .login-form,
+  .review-form,
+  .edit-form {
+    padding: 3.125rem 3rem;
+  }
+}
 .form__input {
   display: block;
   font-family: inherit;
