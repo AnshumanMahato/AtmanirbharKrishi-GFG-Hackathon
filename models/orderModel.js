@@ -11,13 +11,21 @@ const orderSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'Order must belong to a User!']
   },
-  price: {
-    type: Number,
-    require: [true, 'Order must have a price.']
+  shipping_address: {
+    city: String,
+    country: String,
+    line1: String,
+    line2: String,
+    state: String,
+    postal_code: Number
   },
   createdAt: {
     type: Date,
     default: Date.now()
+  },
+  price: {
+    type: Number,
+    require: [true, 'Order must have a price.']
   },
   paid: {
     type: Boolean,

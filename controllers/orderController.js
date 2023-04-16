@@ -18,11 +18,14 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     cancel_url: `${req.protocol}://${req.get('host')}/`,
     customer_email: req.user.email,
     client_reference_id: req.params.productId,
+    shipping_address_collection: {
+      allowed_countries: ['IN']
+    },
     line_items: [
       {
         price_data: {
           currency: 'inr',
-          unit_amount: product.pricePerKg * 100,
+          unit_amount: parseInt(product.pricePerKg * 100),
           product_data: {
             name: `${product.name} Product`,
             description: product.name
@@ -52,10 +55,12 @@ const createOrderCheckout = async (req, session) => {
     'name email'
   );
   const price = session.amount_subtotal / 100;
+  const shipping_address = session.shipping_details.address;
   const order = await Order.create({
     product: product.id,
     user: user.id,
-    price
+    price,
+    shipping_address
   });
   order.product = product;
   order.user = user;
