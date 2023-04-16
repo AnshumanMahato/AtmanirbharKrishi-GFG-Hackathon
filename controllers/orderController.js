@@ -28,7 +28,12 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
           unit_amount: parseInt(product.pricePerKg * 100),
           product_data: {
             name: `${product.name} Product`,
-            description: product.name
+            description: product.name,
+            images: [
+              `${req.protocol}://${req.get('host')}/img/${product.type}/${
+                product.imageCover
+              }`
+            ]
           }
         },
         quantity: qty || 1,

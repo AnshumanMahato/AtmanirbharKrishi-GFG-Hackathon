@@ -1,6 +1,6 @@
 mixin productCard(product)
     .best-p1
-      img(src=`${product.imageCover}` alt='img')
+      img(src=`/img/${product.type}/${product.imageCover}` alt='img')
       .best-p1-txt
         .name-of-p
           p= product.name
