@@ -1391,11 +1391,17 @@ iframe {
 }
 
 @media only screen and (max-width: 768px) {
+  .mainform,
+  .overlay {
+    background-color: #f7f7f7;
+    padding: 4rem 3rem;
+  }
+
   .singup-form,
   .login-form,
   .review-form,
   .edit-form {
-    padding: 3.125rem 3rem;
+    padding: 3rem 2.5rem;
   }
 }
 .form__input {
