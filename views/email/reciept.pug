@@ -68,12 +68,12 @@ html(xmlns='http://www.w3.org/1999/xhtml')
                                             td.purchase_item(width='80%')
                                               span.f-fallback= `${order.product.name} product`
                                             td.align-right(width='20%')
-                                              span.f-fallback= `$${order.price}`
+                                              span.f-fallback= `₹${order.price}`
                                           tr
                                             td.purchase_footer(width='80%', valign='middle')
                                               p.f-fallback.purchase_total.purchase_total--label Total
                                             td.purchase_footer(width='20%', valign='middle')
-                                              p.f-fallback.purchase_total= `$${order.price}`
+                                              p.f-fallback.purchase_total= `₹${order.price}`
                               p
                                 | If you have any questions about this receipt or want to cancel your order, simply reply to this email for help.
                               p
