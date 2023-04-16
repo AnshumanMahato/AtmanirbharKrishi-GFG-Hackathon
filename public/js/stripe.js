@@ -18,6 +18,6 @@ export const orderProduct = async (productId, quantity) => {
     });
   } catch (err) {
     console.log(err);
-    showAlert('error', err);
+    showAlert('error', err.response.data.message);
   }
 };

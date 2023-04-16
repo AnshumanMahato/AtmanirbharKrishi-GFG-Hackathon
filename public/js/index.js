@@ -10,7 +10,6 @@ const signupForm = document.querySelector('.form--signup');
 const loginForm = document.querySelector('.form--login');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const modalClose = document.querySelector('.link-2');
-const buyBtns = document.querySelectorAll('.buy-now>button');
 const orderBtns = document.querySelectorAll('.order-product');
 
 // DELEGATION

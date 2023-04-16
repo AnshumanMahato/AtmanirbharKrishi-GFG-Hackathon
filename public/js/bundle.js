@@ -11049,7 +11049,7 @@ var hideAlert = function hideAlert() {
 // type is 'success' or 'error'
 exports.hideAlert = hideAlert;
 var showAlert = function showAlert(type, msg) {
-  var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 7;
+  var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3;
   hideAlert();
   var markup = "<div class=\"alert alert--".concat(type, "\">").concat(msg, "</div>");
   document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
@@ -11060,7 +11060,7 @@ var showAlert = function showAlert(type, msg) {
 };
 exports.showAlert = showAlert;
 var showPrompt = function showPrompt(type, msg) {
-  var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 7;
+  var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 3;
   hideAlert();
   var markup = "<div class=\"alert alert--".concat(type, "\">\n                    <p>").concat(msg, "</p>\n                    <button class=\"btn btn--yellow btn--confirm\">Confirm</button>\n                    &nbsp;&nbsp;\n                    <button class=\"btn btn--yellow btn--cancel\">Cancel</button>\n                </div>");
   document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
@@ -11253,7 +11253,7 @@ var orderProduct = /*#__PURE__*/function () {
           _context.prev = 8;
           _context.t0 = _context["catch"](0);
           console.log(_context.t0);
-          (0, _alerts.showAlert)('error', _context.t0);
+          (0, _alerts.showAlert)('error', _context.t0.response.data.message);
         case 12:
         case "end":
           return _context.stop();
@@ -11409,7 +11409,6 @@ var signupForm = document.querySelector('.form--signup');
 var loginForm = document.querySelector('.form--login');
 var logOutBtn = document.querySelector('.nav__el--logout');
 var modalClose = document.querySelector('.link-2');
-var buyBtns = document.querySelectorAll('.buy-now>button');
 var orderBtns = document.querySelectorAll('.order-product');
 
 // DELEGATION
