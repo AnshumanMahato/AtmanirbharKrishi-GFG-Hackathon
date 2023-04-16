@@ -9,10 +9,6 @@ const factory = require('./handlerFactory');
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
   // 1) Get the currently ordered product
   const product = await Product.findById(req.params.productId);
-  const test = `https://${req.get('host')}/img/${product.type}/${
-    product.imageCover
-  }`;
-  console.log(test);
   const qty = Number(req.query?.qty);
   // 2) Create checkout session
   const session = await stripe.checkout.sessions.create({
@@ -91,7 +87,6 @@ exports.webhookCheckout = async (req, res, next) => {
   }
 
   if (event.type === 'checkout.session.completed') {
-    console.log('event got');
     await createOrderCheckout(req, event.data.object);
   }
 
