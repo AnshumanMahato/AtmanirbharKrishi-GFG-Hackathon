@@ -9,11 +9,13 @@ process.on('uncaughtException', err => {
 
 const app = require('./app');
 
-const DB = process.env.DATABASE;
-// .replace(
-//   '<PASSWORD>',
-//   process.env.DATABASE_PASSWORD
-// );
+let DB = process.env.DATABASE;
+
+if (process.env.NODE_ENV === 'production')
+  DB = process.env.DATABASE_PROD.replace(
+    '<PASSWORD>',
+    process.env.DATABASE_PASSWORD
+  );
 
 mongoose
   .connect(DB, {
@@ -50,5 +52,3 @@ process.on('SIGTERM', () => {
     console.log('💥 Process terminated!');
   });
 });
-
-console.log(process.env.NODE_ENV);
