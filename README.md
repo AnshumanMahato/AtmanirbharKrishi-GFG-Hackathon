@@ -1,6 +1,6 @@
 # Atmanirbhar Krishi
  
-Project for GeeksForGeeks GoogleXAmd Hackathon.
+Project for GeeksForGeeks GoogleXAmd Hackathon. Project is based on the theme AgroTech.
 
 ## What are the problems being addressed and how to solve them?
 
