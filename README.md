@@ -19,9 +19,39 @@ The only choice of farmers to sell their produce is through APMC. But they could
 	- Solution: We are going to make the process as much easier as possible. For farmers it would be to just update the price, amount of stock and sometimes images. For those who are illiterate, our agents will make sure their operations run smoothly. 
 	- Extra: Agents are the local students who are above 18.
 
-## Technology Used?
+## Technology Used
 
 - Frontend - HTML, CSS and Vanilla Javascript.
 - Backend - NodeJS, MongoDB
-- Deployment - Google Cloud with AMD Instances.
+- Deployment and Server - Google Cloud with AMD Instances(T2D), Nginx.
 - Payment Gateway - Stripe
+
+## Contributions
+
+- Subrajeet: 
+	- Developed the design language keeping user friendliness in mind. (UI/UX)
+	- Designed Logo.
+	- Helped develop the product catalogue section.
+	- Helped in making the website responsive.
+	
+- Vinay: 
+	- Developed the frontend of the website.
+	- Added popup for product checkout section.
+	- Added hover functionality to the cards.
+	- Helped integrating the payment gateway.
+	
+- Vishal: 
+	- Documentation 
+	- Created the promotional materials for the site. (Video)
+	- Helped in curating the resources needed like images, icons, fonts.
+	- Helped in diversifying the upcoming feature ideas.
+	
+- Anshuman
+	- Developed the project architecture and database design.
+	- Implemented the backend for the application.
+	- Payment Integration through Stripe. 
+	-  Managed the deployment of the application on GCP.
+
+---
+
+<div align="center">Made with ❤️ by Team TactM</div>
