@@ -105,4 +105,4 @@ dist
 
 node_modules
 .cache
-*.env
+.vscode
